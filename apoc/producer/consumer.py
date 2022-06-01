@@ -1,8 +1,4 @@
-import ast
 import json
-import pdb
-from json import encoder
-from django.http import JsonResponse
 import threading
 from kafka import KafkaConsumer
 from django.conf import settings
@@ -25,10 +21,9 @@ class Consumer(threading.Thread):
             value_deserializer= lambda x: json.dumps(x.decode('utf-8'))
         )
 
-        messages = []
+        messages = {}
         for message in consumer:
             message = message.value
             messages.append(message)
             print('{}'.format(message))
-            #print(message)
         return messages

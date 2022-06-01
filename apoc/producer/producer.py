@@ -1,6 +1,5 @@
 from logging import Logger
 from kafka import KafkaProducer
-from kafka.producer import kafka
 from json import dumps
 import logging
 from django.conf import settings
@@ -11,8 +10,6 @@ log: Logger = logging.getLogger(__name__)
 
 class KafkaConnector(object):
     def __init__(self):
-        # self.server = kafka + ":" + str(kafka)
-        # self.retries = KAFKA_RETRIES
         self.server = settings.KAFKA_HOST + ":" + str(settings.KAFKA_PORT)
         self.retries = settings.KAFKA_RETRIES
 
