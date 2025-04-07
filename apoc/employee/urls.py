@@ -13,7 +13,7 @@ urlpatterns = [
     path('resource', ComputationResourceApi.as_view()),
     path('resource/create', ComputationResourceCreateApi.as_view()),
     path('resource/<str:pk>', ComputationResourceUpdateApi.as_view()),
-    path('resource/<int:pk>/delete', ComputationResourceDeleteApi.as_view()),
+    path('resource/<str:pk>/delete', ComputationResourceDeleteApi.as_view()),
     path('customer/', CustomerApi.as_view()),
     path('customer/create', CustomerCreateApi.as_view()),
     path('customer/<str:pk>', CustomerUpdateApi.as_view()),
